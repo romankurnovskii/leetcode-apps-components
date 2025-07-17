@@ -36,7 +36,7 @@ function RemoteComponentViewer({
   const [DynamicComponent, setDynamicComponent] = useState<React.ComponentType | null>(null);
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
 
-  const componentUrl = `${parentUrl}/${problemId}/01.jsx?cb=${Date.now()}`;
+  const componentUrl = `${parentUrl}/${problemId}/01.jsx`;
 
   useEffect(() => {
     // loads the Babel transpiler script into the document head.
@@ -62,7 +62,8 @@ function RemoteComponentViewer({
         await loadBabel();
 
         // 2. Fetch the component's source code
-        const response = await fetch(componentUrl);
+        const urlWithCacheBuster = `${componentUrl}?cb=${Date.now()}`;
+        const response = await fetch(urlWithCacheBuster);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -141,7 +142,7 @@ function RemoteComponentViewer({
     };
 
     fetchAndRenderComponent();
-  }, [componentUrl]); // Re-run if the URL changes
+  }, [problemId, parentUrl]); // Only re-run if these change
 
   // --- Render logic ---
   const renderContent = () => {
