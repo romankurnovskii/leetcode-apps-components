@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "allowJs": true, // Allow JavaScript files to be imported inside your project, instead of just .ts and .tsx files.
+    "checkJs": true // When enabled then errors are reported in JS files. Equivalent of including // @ts-check
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
