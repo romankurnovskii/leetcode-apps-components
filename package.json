@@ -1,6 +1,6 @@
 {
   "name": "leetcode-apps-components",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Components used for LeetCode Apps Project",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -13,9 +13,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@babel/standalone": "^7.28.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "@babel/standalone": "^7.28.1"
   },
   "devDependencies": {
     "@types/react": "^19.1.8",
@@ -23,6 +21,10 @@
     "rollup": "^4.0.0",
     "rollup-plugin-typescript2": "^0.34.0",
     "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0"
   },
   "keywords": [
     "react",
