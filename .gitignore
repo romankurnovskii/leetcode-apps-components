@@ -120,3 +120,13 @@ lib/
 .DS_Store
 .env
 .vscode
+
+# Node
+node_modules/
+
+# Build output
+dist/
+
+# Others
+.DS_Store
+.env

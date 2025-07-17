@@ -1,18 +1,20 @@
 {
   "compilerOptions": {
-    "isolatedModules": true,
-    "esModuleInterop": true,
+    "target": "ES2019",
+    "module": "ESNext",
     "declaration": true,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "declarationDir": "dist",
+    "emitDeclarationOnly": false,
     "outDir": "dist",
-    "sourceMap": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noUnusedLocals": true,
-    "allowJs": true, // Allow JavaScript files to be imported inside your project, instead of just .ts and .tsx files.
-    "checkJs": true // When enabled then errors are reported in JS files. Equivalent of including // @ts-check
+    "isolatedModules": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "example"]
 }
