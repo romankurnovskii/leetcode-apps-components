@@ -1,3 +1,5 @@
+import './styles/base.css';
+
 export {default, RemoteComponentViewer} from './RemoteComponentViewer';
 export type {RemoteVisualizerLoaderProps, RemoteComponentProps} from './RemoteComponentViewer';
 

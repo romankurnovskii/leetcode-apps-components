@@ -20,7 +20,7 @@ module.exports = {
         'react',
         'react-dom',
         '@babel/standalone',
-        'lucide-react',
+
     ],
     plugins: [
         typescript({
