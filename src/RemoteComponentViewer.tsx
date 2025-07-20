@@ -3,6 +3,7 @@ import {InputCase} from './components/InputCase';
 import {NextButton} from './components/NextButton';
 import {PreviousButton} from './components/PreviousButton';
 import {StartButton} from './components/StartButton';
+import {ErrorBoundary} from './components/ErrorBoundary';
 
 const leetcodeAppsComponents = {
   InputCase: InputCase,
@@ -169,7 +170,11 @@ function RemoteComponentViewer({
       case 'error':
         return <div></div>;
       case 'success':
-        return DynamicComponent ? createElement(DynamicComponent) : null;
+        return DynamicComponent ? (
+          <ErrorBoundary fallback={<div>Component failed to render.</div>}>
+            {createElement(DynamicComponent)}
+          </ErrorBoundary>
+        ) : null;
       default:
         return null;
     }
