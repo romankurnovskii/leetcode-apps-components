@@ -63,7 +63,7 @@ function RemoteComponentViewer({
         await loadBabel();
 
         // 2. Fetch the component's source code
-        const urlWithCacheBuster = `${componentUrl}?cb=${Date.now()}`;
+        const urlWithCacheBuster = `${componentUrl}?cb=${new Date().toDateString()}`; // cache per day
         const response = await fetch(urlWithCacheBuster);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
