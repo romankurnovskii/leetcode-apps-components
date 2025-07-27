@@ -81,6 +81,7 @@ function RemoteComponentViewer({
           .replace(/\buseState\s*\(/g, 'React.useState(')
           .replace(/\buseEffect\s*\(/g, 'React.useEffect(')
           .replace(/\buseMemo\s*\(/g, 'React.useMemo(')
+          .replace(/\buseCallback\s*\(/g, 'React.useCallback(')
           .replace(/\buseRef\s*\(/g, 'React.useRef(');
 
         // 3. Transpile JSX to JavaScript using Babel
@@ -119,10 +120,21 @@ function RemoteComponentViewer({
           'useState',
           'useEffect',
           'useMemo',
+          'useCallback',
           'useRef',
           jsCode
         );
-        factory(module, exports, customRequire, React, React.useState, React.useEffect, React.useMemo, React.useRef);
+        factory(
+          module,
+          exports,
+          customRequire,
+          React,
+          React.useState,
+          React.useEffect,
+          React.useMemo,
+          React.useCallback,
+          React.useRef
+        );
 
         const component = module.exports.default;
 
