@@ -1,4 +1,4 @@
-const typescript = require('rollup-plugin-typescript2');
+const typescript = require('@rollup/plugin-typescript');
 const pkg = require('./package.json');
 
 module.exports = {
@@ -16,16 +16,12 @@ module.exports = {
             sourcemap: true,
         },
     ],
-    external: [
-        'react',
-        'react-dom',
-        '@babel/standalone',
-
-    ],
+    external: ['react', 'react-dom', 'react/jsx-runtime', '@babel/standalone'],
     plugins: [
         typescript({
-            useTsconfigDeclarationDir: true,
-            clean: true,
+            tsconfig: './tsconfig.json',
+            declaration: true,
+            declarationDir: 'dist',
         }),
     ],
-}; 
+};
