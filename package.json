@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@babel/standalone": "^7.28.1"
+    "@babel/standalone": "^8.1.1"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.3.1",
